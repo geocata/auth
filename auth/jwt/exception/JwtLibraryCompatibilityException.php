@@ -15,7 +15,7 @@ namespace geocata\auth\jwt\exception;
  * @since      Class available since Release 1.0
  */
 class JwtLibraryCompatibilityException extends \Exception {
-	
+    
 }
 
 ?>
