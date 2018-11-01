@@ -18,7 +18,7 @@ A collection of authentication libraries for PHP. For now it only includes a JWT
 }
 ```  
 **Usage :**  
-```  
+```php  
 <?php  
 use geocata\auth\jwt;  
 use geocata\auth\jwt\algorithm\HS256Cryptography;  
