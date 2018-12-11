@@ -1,4 +1,5 @@
 <?php
+
 namespace geocata\auth\jwt\exception;
 
 /**
@@ -14,8 +15,7 @@ namespace geocata\auth\jwt\exception;
  * @link       --
  * @since      Class available since Release 1.0
  */
-class JwtLibraryCompatibilityException extends \Exception {
+class JwtSigningFailed extends \Exception
+{
     
 }
-
-?>

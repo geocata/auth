@@ -1,23 +1,15 @@
 <?php
+
 namespace geocata\auth\jwt\algorithm;
 
-use geocata\auth\jwt\exception\JwtSigningException;
-use geocata\auth\jwt\exception\InvalidJwtSignatureException;
+use geocata\auth\jwt\exception\JwtSigningFailed;
+use geocata\auth\jwt\exception\InvalidJwtSignature;
 
 /**
- *
- * Short description 
- *
- * Long description 
- *
- * @category   --
- * @package    --
- * @license    --
- * @version    1.0
- * @link       --
- * @since      Class available since Release 1.0
+ * @author George Catalin
  */
-abstract class AbstractHsCryptography extends AbstractCryptography {
+abstract class AbstractHsCryptography extends AbstractCryptography
+{
     /**
      * The key to be used for cryptography
      *
@@ -25,7 +17,7 @@ abstract class AbstractHsCryptography extends AbstractCryptography {
      * @access protected
      */
     protected $key;
-    
+
     /**
      * Construct
      * 
@@ -36,31 +28,33 @@ abstract class AbstractHsCryptography extends AbstractCryptography {
      * @access public
      * @since Method/function available since Release 1.0
      */
-    public function __construct($key) {
+    public function __construct($key)
+    {
         $this->key = $key;
     }
-    
+
     /**
      * Sign a message
      * 
      * @param string $message
      *
      * @return string Binary string. The raw output
-     * @throws JwtSigningException If the signing failed
+     * @throws JwtSigningFailed If the signing failed
      *
      * @access public
      * @since Method/function available since Release 1.0
      */
-    public function sign($message) {
+    public function sign($message)
+    {
         $res = @hash_hmac($this->getHashAlgo(), $message, $this->key, TRUE);
-        
-        if($res === FALSE) {
-            throw new JwtSigningException('Failed to generate keyed hash value using HMAC.');
+
+        if ($res === FALSE) {
+            throw new JwtSigningFailed('Failed to generate keyed hash value using HMAC.');
         }
-        
+
         return $res;
     }
-    
+
     /**
      * Verify if the user provided message complies with the original message
      * 
@@ -68,20 +62,21 @@ abstract class AbstractHsCryptography extends AbstractCryptography {
      * @param string $userSignedMessage As binary string
      *
      * @return void Does not return anything
-     * @throws InvalidJwtSignatureException Throws exceptions if verification failed for some reason
+     * @throws InvalidJwtSignature Throws exceptions if verification failed for some reason
      *
      * @access public
      * @since Method/function available since Release 1.0
      */
-    public function verify($originalMessage, $userSignedMessage) {
+    public function verify($originalMessage, $userSignedMessage)
+    {
         $hash = $this->sign($originalMessage);
-        
-        if($this->equals($hash, $userSignedMessage) === FALSE) {
-            throw new InvalidJwtSignatureException('Could not verify the user provided message.'
-                    . ' Invalid signature.');
+
+        if ($this->equals($hash, $userSignedMessage) === FALSE) {
+            throw new InvalidJwtSignature(
+                    'Could not verify the user provided message. Invalid signature.');
         }
     }
-    
+
     /**
      * Get the hash algorithm to be used by the hashing function
      *
@@ -93,5 +88,3 @@ abstract class AbstractHsCryptography extends AbstractCryptography {
      */
     abstract protected function getHashAlgo();
 }
-
-?>

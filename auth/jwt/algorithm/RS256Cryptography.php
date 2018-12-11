@@ -1,4 +1,5 @@
 <?php
+
 namespace geocata\auth\jwt\algorithm;
 
 /**
@@ -14,7 +15,8 @@ namespace geocata\auth\jwt\algorithm;
  * @link       --
  * @since      Class available since Release 1.0
  */
-class RS256Cryptography extends AbstractRsCryptography {
+class RS256Cryptography extends AbstractRsCryptography
+{
     /**
      * The hash algo used internally by the hash function
      *
@@ -22,8 +24,8 @@ class RS256Cryptography extends AbstractRsCryptography {
      * @const
      * @access public
      */
-    const INTERNAL_ALGORITHM =  OPENSSL_ALGO_SHA256;
-    
+    const INTERNAL_ALGORITHM = OPENSSL_ALGO_SHA256;
+
     /**
      * The jwt algorithm name
      *
@@ -32,7 +34,7 @@ class RS256Cryptography extends AbstractRsCryptography {
      * @access public
      */
     const JWT_ALGORITHM = 'RS256';
-    
+
     /**
      * Get the hash algorithm to be used by the hashing function
      *
@@ -42,10 +44,11 @@ class RS256Cryptography extends AbstractRsCryptography {
      * @access protected
      * @since Method/function available since Release 1.0
      */
-    protected function getHashAlgo() {
+    protected function getHashAlgo()
+    {
         return self::INTERNAL_ALGORITHM;
     }
-    
+
     /**
      * Get the jwt algo that is used by this crypto class
      *
@@ -55,9 +58,9 @@ class RS256Cryptography extends AbstractRsCryptography {
      * @access public
      * @since Method/function available since Release 1.0
      */
-    public function getJwtAlgo() {
+    public function getJwtAlgo()
+    {
         return self::JWT_ALGORITHM;
     }
-}
 
-?>
+}
