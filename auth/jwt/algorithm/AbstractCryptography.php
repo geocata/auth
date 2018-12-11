@@ -1,9 +1,9 @@
 <?php
 
-namespace geocata\auth\jwt\algorithm;
+namespace rsgcata\auth\jwt\algorithm;
 
-use geocata\auth\jwt\exception\JwtSigningFailed;
-use geocata\auth\jwt\exception\InvalidJwtSignature;
+use rsgcata\auth\jwt\exception\JwtSigningFailed;
+use rsgcata\auth\jwt\exception\InvalidJwtSignature;
 
 /**
  *

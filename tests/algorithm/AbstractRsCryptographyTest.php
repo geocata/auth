@@ -1,12 +1,12 @@
 <?php
 
-namespace tests\algorithm;
+namespace rsgcata\auth\tests\algorithm;
 
-use geocata\auth\jwt\algorithm\AbstractRsCryptography;
-use geocata\auth\jwt\exception\IncompatibleEnvironment;
-use geocata\auth\jwt\algorithm\RS256Cryptography;
-use geocata\auth\jwt\exception\JwtSigningFailed;
-use geocata\auth\jwt\exception\InvalidJwtSignature;
+use rsgcata\auth\jwt\algorithm\AbstractRsCryptography;
+use rsgcata\auth\jwt\exception\IncompatibleEnvironment;
+use rsgcata\auth\jwt\algorithm\RS256Cryptography;
+use rsgcata\auth\jwt\exception\JwtSigningFailed;
+use rsgcata\auth\jwt\exception\InvalidJwtSignature;
 
 /**
  *
@@ -57,7 +57,7 @@ class AbstractRsCryptographyTest extends \PHPUnit\Framework\TestCase
     public function testConstructFailsWhenInvalidEnv()
     {
         $stub = $this->getMockForAbstractClass(AbstractRsCryptography::class, [], '', FALSE, TRUE,
-                                               TRUE, ['checkEnvCompatibility']);
+                TRUE, ['checkEnvCompatibility']);
 
         $stub->expects($this->once())
                 ->method('checkEnvCompatibility')

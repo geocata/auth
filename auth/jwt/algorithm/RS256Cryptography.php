@@ -1,6 +1,6 @@
 <?php
 
-namespace geocata\auth\jwt\algorithm;
+namespace rsgcata\auth\jwt\algorithm;
 
 /**
  *

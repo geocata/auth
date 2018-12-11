@@ -1,6 +1,6 @@
 <?php
 
-namespace geocata\auth\jwt\exception;
+namespace rsgcata\auth\jwt\exception;
 
 /**
  *

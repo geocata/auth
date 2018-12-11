@@ -1,9 +1,9 @@
 <?php
 
-namespace geocata\auth\jwt;
+namespace rsgcata\auth\jwt;
 
-use geocata\auth\jwt\algorithm;
-use geocata\auth\jwt\exception;
+use rsgcata\auth\jwt\algorithm;
+use rsgcata\auth\jwt\exception;
 
 /**
  *

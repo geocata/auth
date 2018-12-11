@@ -1,9 +1,9 @@
 {
-    "name": "geocata/auth",
+    "name": "rsgcata/auth",
     "type": "library",
     "description": "Authentication library (jwt)",
     "keywords": [],
-    "homepage": "https://github.com/geocata/auth",
+    "homepage": "https://github.com/rsgcata/auth",
     "license": "MIT",
     "authors": [
         {
@@ -18,7 +18,7 @@
         "phpunit/phpunit": "~7"
     },
     "autoload": {
-        "psr-4": { "geocata\\": "" },
+        "psr-4": { "rsgcata\\": "" },
         "exclude-from-classmap": [
             "/tests/"
         ]

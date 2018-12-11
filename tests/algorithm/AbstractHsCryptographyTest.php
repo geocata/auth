@@ -1,11 +1,11 @@
 <?php
 
-namespace tests\algorithm;
+namespace rsgcata\auth\tests\algorithm;
 
-use geocata\auth\jwt\algorithm\AbstractHsCryptography;
-use geocata\auth\jwt\algorithm\HS256Cryptography;
-use geocata\auth\jwt\exception\JwtSigningFailed;
-use geocata\auth\jwt\exception\InvalidJwtSignature;
+use rsgcata\auth\jwt\algorithm\AbstractHsCryptography;
+use rsgcata\auth\jwt\algorithm\HS256Cryptography;
+use rsgcata\auth\jwt\exception\JwtSigningFailed;
+use rsgcata\auth\jwt\exception\InvalidJwtSignature;
 
 /**
  *
@@ -56,7 +56,7 @@ class AbstractHsCryptographyTest extends \PHPUnit\Framework\TestCase
     public function testVerifyWorks()
     {
         $stub = $this->getMockForAbstractClass(AbstractHsCryptography::class, ['aKey'], '', TRUE, TRUE,
-                                               TRUE, ['sign', 'equals']);
+                TRUE, ['sign', 'equals']);
 
         $stub->expects($this->any())
                 ->method('getHashAlgo')

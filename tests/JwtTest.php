@@ -1,10 +1,10 @@
 <?php
 
-namespace tests;
+namespace rsgcata\auth\tests;
 
-use geocata\auth\jwt\Jwt;
-use geocata\auth\jwt\algorithm\HS256Cryptography;
-use geocata\auth\jwt\exception\InvalidJwtSignature;
+use rsgcata\auth\jwt\Jwt;
+use rsgcata\auth\jwt\algorithm\HS256Cryptography;
+use rsgcata\auth\jwt\exception\InvalidJwtSignature;
 
 /**
  *
