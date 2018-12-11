@@ -8,23 +8,23 @@ A collection of authentication libraries for PHP. For now it only includes a JWT
 {
     "repositories": [
         {
-            "url": "https://github.com/geocata/auth.git",
+            "url": "https://github.com/rsgcata/auth.git",
             "type": "git"
         }
     ],
     "require": {
-        "geocata/auth": "~1.0"
+        "rsgcata/auth": "~1.0"
     }
 }
 ```  
 **Usage :**  
 ```php  
 <?php  
-use geocata\auth\jwt;  
-use geocata\auth\jwt\algorithm\HS256Cryptography;  
+use rsgcata\auth\jwt;  
+use rsgcata\auth\jwt\algorithm\HS256Cryptography;  
   
 // Set the cryptographic algorithm to be used. You can find more algorithms in the
-// geocata\auth\jwt\algorithm namespace. You can also add more algorithms there if you want,
+// rsgcata\auth\jwt\algorithm namespace. You can also add more algorithms there if you want,
 // or build your own algorithm classes by extending the base AbstractCryptography class
 $algo = new HS256Cryptography('aKey');
 
